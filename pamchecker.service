@@ -1,0 +1,13 @@
+[Unit]
+Description=PAM authentication check service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/opt/stack/pamchecker/pamchecker.py
+Restart=always
+RestartSec=5
+StartLimitInterval=0
+
+[Install]
+WantedBy=multi-user.target
